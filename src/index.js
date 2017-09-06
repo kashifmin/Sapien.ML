@@ -1,1 +1,5 @@
-console.log('Hey, GRUNT');
+function hello() {
+	return 'hello'
+}
+
+module.exports = hello;
