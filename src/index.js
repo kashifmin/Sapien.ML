@@ -1,3 +1,1 @@
-module.exports = () => {
-	return 'Readying for Setup';
-}
+console.log('Hey, GRUNT');
