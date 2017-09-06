@@ -2,9 +2,9 @@
   "name": "sapien.ml",
   "version": "0.0.0",
   "description": "The Missing AI / ML Library for JavaScript.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "mocha test/**/**.ts.js"
+    "test": "mocha src/test/**/**.ts.js"
   },
   "repository": {
     "type": "git",
