@@ -1,0 +1,28 @@
+{
+  "name": "sapien.ml",
+  "version": "0.0.0",
+  "description": "The Missing AI / ML Library for JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/**/**.ts.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DakshMiglani/Sapien.ML.git"
+  },
+  "keywords": [
+    "Sapien",
+    "Machine",
+    "Learning",
+    "SapienML",
+    "Sapien.ML",
+    "Deep",
+    "Learning"
+  ],
+  "author": "Daksh Miglani <hello@dak.sh> (https://dak.sh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DakshMiglani/Sapien.ML/issues"
+  },
+  "homepage": "https://github.com/DakshMiglani/Sapien.ML#readme"
+}
