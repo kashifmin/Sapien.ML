@@ -5,7 +5,7 @@
   "main": "build/sapien.min.js",
   "url": "http://sapien.ml",
   "scripts": {
-    "test": "mocha src/test/**/**.ts.js",
+    "test": "mocha test/**/**.ts.js",
     "build": "grunt"
   },
   "repository": {
@@ -39,6 +39,8 @@
     "mocha": "^3.5.0"
   },
   "dependencies": {
-    "grunt-contrib-uglify": "^3.0.1"
+    "grunt-contrib-uglify": "^3.0.1",
+    "ndarray": "^1.0.18",
+    "webmonkeys": "^1.6.1"
   }
 }

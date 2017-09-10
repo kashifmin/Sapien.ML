@@ -1,4 +1,4 @@
-var build = require('../index.js')
+var build = require('../src/index.js')
 var expect = require('chai').expect;
 
 // require('babel-register')({
