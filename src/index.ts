@@ -1,5 +1,7 @@
-import {myclass} from './test'
-export function hello(){
-    console.log('hello')
-    var x = new myclass()
+import { HelloWorld } from './hello';
+
+export function hello(): string {
+    // test import
+    let myObj: HelloWorld = new HelloWorld();
+    return myObj.printHello();
 }
