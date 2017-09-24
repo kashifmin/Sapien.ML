@@ -4,6 +4,16 @@ module.exports = function(grunt) {
   let comment = '/**\n <%= pkg.name %>:<%= pkg.version %> \n Copyright 2017 <%= pkg.author %> \n Released Under The <%= pkg.license %> License\n <%= pkg.url %> \n */'
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    typescript: {
+    base: {
+      src: ['src/index.ts'],
+      dest: 'temp/',
+      options: {
+        module: 'commonjs', //or commonjs 
+        target: 'es5', //or es3 
+      }
+    }
+  },
     browserify: {
         options: {
           banner: comment
@@ -11,7 +21,7 @@ module.exports = function(grunt) {
         dist: {
             files: {
                 // destination for transpiled js : source js
-                'build/sapien.js': 'src/index.js'
+                'build/sapien.js': 'temp/index.js'
             },
             options: {
                 transform: [['babelify', { presets: "es2015" }]],
@@ -35,6 +45,8 @@ module.exports = function(grunt) {
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
+  grunt.loadNpmTasks('grunt-typescript');
   // Default task(s).
-  grunt.registerTask('default', ['browserify:dist', 'uglify']);
+  grunt.registerTask('default', ['typescript','browserify:dist', 'uglify']);
+
 };
