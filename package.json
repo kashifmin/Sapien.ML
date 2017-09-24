@@ -5,7 +5,8 @@
   "main": "build/sapien.min.js",
   "url": "http://sapien.ml",
   "scripts": {
-    "test": "mocha test/**/**.ts.js",
+    "pretest": "tsc test/*.ts",
+    "test": "mocha test/**/**.js",
     "build": "grunt"
   },
   "repository": {
@@ -28,6 +29,8 @@
   },
   "homepage": "https://github.com/DakshMiglani/Sapien.ML#readme",
   "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.43",
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babelify": "^7.3.0",
