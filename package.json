@@ -5,7 +5,10 @@
   "main": "build/sapien.min.js",
   "url": "http://sapien.ml",
   "scripts": {
-    "test": "mocha test/**/**.ts.js",
+    "pretest": "tsc",
+    "test": "mocha",
+    "watch": "mocha-typescript-watch",
+    "prepare": "tsc",
     "build": "grunt"
   },
   "repository": {
@@ -28,6 +31,8 @@
   },
   "homepage": "https://github.com/DakshMiglani/Sapien.ML#readme",
   "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.43",
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babelify": "^7.3.0",
@@ -35,12 +40,39 @@
     "grunt": "1.0.1",
     "grunt-browserify": "^5.2.0",
     "grunt-cli": "1.2.0",
+    "grunt-typescript": "^0.8.0",
     "load-grunt-tasks": "^3.5.2",
-    "mocha": "^3.5.0"
+    "mocha": "^3.5.3",
+    "mocha-typescript": "^1.1.9",
+    "nyc": "^11.2.1",
+    "source-map-support": "^0.4.18",
+    "ts-node": "^3.3.0",
+    "tsc": "^1.20150623.0",
+    "typescript": "^2.5.2"
   },
   "dependencies": {
+    "@types/node": "^8.0.30",
     "grunt-contrib-uglify": "^3.0.1",
+    "mathjs": "^3.16.3",
     "ndarray": "^1.0.18",
     "webmonkeys": "^1.6.1"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 80,
+    "statements": 80,
+    "functions": 80,
+    "branches": 80,
+    "include": [
+      "temp/**/*.js"
+    ],
+    "exclude": [
+      "test/**/*.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "all": true
   }
 }
