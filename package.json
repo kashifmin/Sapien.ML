@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "@types/node": "^8.0.30",
+    "gpu.js": "0.0.0",
     "grunt-contrib-uglify": "^3.0.1",
     "mathjs": "^3.16.3",
     "ndarray": "^1.0.18",
