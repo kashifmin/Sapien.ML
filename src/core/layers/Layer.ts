@@ -5,6 +5,6 @@ export abstract class Layer{
         
     */
 
-    abstract feedForward():Tensor;
+    abstract feedForward(input:Tensor):Tensor;
 
 }
