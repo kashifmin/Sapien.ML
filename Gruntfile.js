@@ -7,7 +7,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     browserify: {
         options: {
-          banner: comment
+          banner: comment,
+          
         },
         dist: {
             files: {
@@ -17,7 +18,8 @@ module.exports = function(grunt) {
             options: {
                 transform: [['babelify', { presets: "es2015" }]],
                 browserifyOptions: {
-                    debug: true
+                    debug: true,
+                    paths : ["temp"]
                 }
             }
         }
@@ -33,15 +35,8 @@ module.exports = function(grunt) {
     },
     ts: {
       default : {
-          src: ["src/*.ts", "!node_modules/**/*.ts"],
-          dest:'temp/',
-          options:{
-            "experimentalDecorators":true,
-            "baseUrl":"./src",
-            "outDir": "temp/",
-            "rootDir":'.',
-            "sourceRoot":"./src"
-          }
+          tsconfig:'./tsconfig.json',
+          dest:"temp"
       }
   }
   });
