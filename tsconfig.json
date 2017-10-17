@@ -7,10 +7,11 @@
         "lib": [ "es6" ],
         "outDir": "temp/",
         "rootDir": ".",
-        "sourceRoot": ".",
+        "sourceRoot": "./src",
         "allowJs": true,
         "typeRoots": [
             "node_modules/@types"
-        ]
+        ],
+        "baseUrl": "./src"
     }
 }
