@@ -39,14 +39,28 @@ module.exports = function(grunt) {
         src: 'build/sapien.js',
         dest: 'build/sapien.min.js'
       }
-    }
+    },
+    ts: {
+      default : {
+          src: ["src/*.ts", "!node_modules/**/*.ts"],
+          dest:'temp/',
+          options:{
+            "experimentalDecorators":true,
+            "baseUrl":"./src",
+            "outDir": "temp/",
+            "rootDir":'.',
+            "sourceRoot":"./src"
+          }
+      }
+  }
   });
 
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.loadNpmTasks('grunt-typescript');
+  grunt.loadNpmTasks('grunt-ts');
   // Default task(s).
-  grunt.registerTask('default', ['typescript','browserify:dist', 'uglify']);
+  grunt.registerTask('default', ['ts','browserify:dist', 'uglify']);
 
 };
