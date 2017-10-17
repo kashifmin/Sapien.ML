@@ -5,4 +5,4 @@ temp
 .nyc_output
 coverage
 .tscache
-build/
+build/*.js
