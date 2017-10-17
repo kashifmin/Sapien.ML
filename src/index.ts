@@ -1,5 +1,2 @@
-import {myclass} from './test'
-export function hello(){
-    console.log('hello')
-    var x = new myclass()
-}
+import { Layer, Dense } from 'core/layers'
+var x = new Dense()
