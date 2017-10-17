@@ -1,19 +1,10 @@
+'use strict';
 module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
   // Project configuration.
   let comment = '/**\n <%= pkg.name %>:<%= pkg.version %> \n Copyright 2017 <%= pkg.author %> \n Released Under The <%= pkg.license %> License\n <%= pkg.url %> \n */'
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    typescript: {
-    base: {
-      src: ['src/index.ts'],
-      dest: 'temp/',
-      options: {
-        module: 'commonjs', //or commonjs 
-        target: 'es5', //or es3 
-      }
-    }
-  },
     browserify: {
         options: {
           banner: comment
@@ -58,7 +49,6 @@ module.exports = function(grunt) {
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  grunt.loadNpmTasks('grunt-typescript');
   grunt.loadNpmTasks('grunt-ts');
   // Default task(s).
   grunt.registerTask('default', ['ts','browserify:dist', 'uglify']);
