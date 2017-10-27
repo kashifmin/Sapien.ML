@@ -1,17 +1,25 @@
 {
     "compilerOptions": {
-        "target": "es6",
-        "module": "commonjs",
-        "sourceMap": true,
-        "experimentalDecorators": true,
-        "lib": [ "es6" ],
-        "outDir": "temp/",
-        "rootDir": ".",
-        "sourceRoot": "./src",
-        "allowJs": true,
-        "typeRoots": [
-            "node_modules/@types"
-        ],
-        "baseUrl": "./src"
-    }
-}
+      "module": "commonjs",
+      "noImplicitAny": true,
+      "removeComments": true,
+      "preserveConstEnums": true,
+      "experimentalDecorators":true,
+      "outDir": "temp",
+      "rootDir":"",
+      "sourceMap": true,
+      "sourceRoot":"src/",
+      "target":"es5",
+      "listFiles":true,
+      "baseUrl": "./src"
+    },
+    "exclude": [
+      "build",
+      "coverage",
+      "node_modules",
+      "typings",
+      "test",
+      "temp",
+      "docs"
+    ]
+  }
